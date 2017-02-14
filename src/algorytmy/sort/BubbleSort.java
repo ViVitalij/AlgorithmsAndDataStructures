@@ -1,4 +1,5 @@
 package algorytmy.sort;
+import static algorytmy.sort.SortUtils.swap;
 
 /**
  * Created by m.losK on 2017-02-14.
@@ -45,12 +46,6 @@ public class BubbleSort {
             }
         }
         return unsortedArray;
-    }
-
-    public static void swap(int[] unsortedArray, int index, int previousIndex) {
-        int tmp = unsortedArray[index];
-        unsortedArray[index] = unsortedArray[previousIndex];
-        unsortedArray[previousIndex] = tmp;
     }
 
     public static void printArray(int[] array) {
