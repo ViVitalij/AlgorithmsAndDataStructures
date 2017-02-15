@@ -1,5 +1,5 @@
-package algorytmy.sort;
-import static algorytmy.sort.SortUtils.swap;
+package algorithms.sort;
+import static algorithms.sort.SortUtils.swap;
 
 /**
  * Created by m.losK on 2017-02-14.
