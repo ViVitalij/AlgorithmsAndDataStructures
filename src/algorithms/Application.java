@@ -7,6 +7,19 @@ import algorithms.structures.MyList;
  */
 public class Application {
     public static void main(String[] args) {
+        MyList myList = initMyList();
+        MyList clonedList = myList.clone();
+        myList.add(4);
+        clonedList.delete(3);
+        System.out.println(myList.toString());
+        System.out.println(clonedList.toString());
+        clonedList.add(1, 5);
+        System.out.println(clonedList.toString());
+        clonedList.set(3, 3);
+        System.out.println(clonedList.toString());
+    }
+
+    private static MyList initMyList() {
         MyList myList = new MyList();
         myList.add(1);
         myList.add(2);
@@ -20,5 +33,6 @@ public class Application {
         myList.add(5);
         myList.add(5);
         myList.add(7);
+        return myList;
     }
 }
