@@ -1,4 +1,4 @@
-package algorithms;
+package test.algorithms.structures;
 
 import algorithms.structures.MyList;
 import algorithms.structures.MyListInterface;
@@ -6,7 +6,7 @@ import algorithms.structures.MyListInterface;
 /**
  * Created by m.losK on 2017-02-14.
  */
-public class Application {
+public class MyListTest {
     public static void main(String[] args) {
         MyListInterface myList = initMyList();
         MyListInterface clonedList = myList.clone();

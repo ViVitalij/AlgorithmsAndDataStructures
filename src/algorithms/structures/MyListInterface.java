@@ -4,6 +4,7 @@ package algorithms.structures;
  * Created by m.losK on 2017-02-16.
  */
 public interface MyListInterface {
+
     void add(int value);
 
     void add(int index, int value);
