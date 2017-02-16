@@ -17,6 +17,11 @@ public class Application {
         System.out.println(clonedList.toString());
         clonedList.set(3, 3);
         System.out.println(clonedList.toString());
+        clonedList.addAll(myList);
+        System.out.println(clonedList.toString());
+        System.out.println(clonedList.toString());
+        clonedList.addAll(myList,3);
+        System.out.println(clonedList.toString());
     }
 
     private static MyList initMyList() {

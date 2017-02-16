@@ -95,10 +95,34 @@ public class MyList {
                 doubleCappacity();
             }
             for (int i = size; i > index; i--) {
-                this.array[ił] = this.array[i - 1];
+                this.array[i] = this.array[i - 1];
             }
             this.size++;
             this.array[index] = value;
+        }
+    }
+
+    public void addAll(MyList myList){
+        for (int i = 0; i < myList.size; i++) {
+            if (this.size >= this.array.length) {
+                doubleCappacity();
+            }
+            this.array[this.size] = myList.array[i];
+            this.size++;
+        }
+    }
+
+    //needs improvement
+    public void addAll(MyList myList, int index){
+        if (checkIndex(index)) {
+            for (int i = 0; i < myList.size; i++) {
+                if (this.size >= this.array.length) {
+                    doubleCappacity();
+                }
+                this.array[index+i+myList.size]=this.array[index+i];
+                this.array[index+i] = myList.array[i];
+                this.size++;
+            }
         }
     }
 }
