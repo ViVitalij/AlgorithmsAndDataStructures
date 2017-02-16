@@ -1,26 +1,27 @@
 package algorithms;
 
 import algorithms.structures.MyList;
+import algorithms.structures.MyListInterface;
 
 /**
  * Created by m.losK on 2017-02-14.
  */
 public class Application {
     public static void main(String[] args) {
-        MyList myList = initMyList();
-        MyList clonedList = myList.clone();
+        MyListInterface myList = initMyList();
+        MyListInterface clonedList = myList.clone();
         myList.add(4);
         clonedList.delete(3);
+//        System.out.println(myList.toString());
+//        System.out.println(clonedList.toString());
+        clonedList.add(1, 5);
+//        System.out.println(clonedList.toString());
+        clonedList.set(3, 3);
+//        System.out.println(clonedList.toString());
         System.out.println(myList.toString());
         System.out.println(clonedList.toString());
-        clonedList.add(1, 5);
-        System.out.println(clonedList.toString());
-        clonedList.set(3, 3);
-        System.out.println(clonedList.toString());
-        clonedList.addAll(myList);
-        System.out.println(clonedList.toString());
-        System.out.println(clonedList.toString());
-        clonedList.addAll(myList,3);
+//        clonedList.addAll(myList);
+        clonedList.addAll(3, myList);
         System.out.println(clonedList.toString());
     }
 
