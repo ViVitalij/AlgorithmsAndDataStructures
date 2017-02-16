@@ -10,7 +10,7 @@ public class MyLinkedList implements MyListInterface {
     @Override
     public void add(int value) {
         MyLinkedList myLinkedList = getLast();
-        MyLinkedList tmpMyLinkedList = myLinkedList;
+        MyLinkedList tmpMyLinkedList = new MyLinkedList();
         tmpMyLinkedList.value = value;
         myLinkedList.next = tmpMyLinkedList;
     }
@@ -30,15 +30,23 @@ public class MyLinkedList implements MyListInterface {
 
     @Override
     public int get(int index) {
+        MyLinkedList myLinkedList = getElement(index);
+        if (myLinkedList == null) {
+            System.out.println("Wrong index");
+            return 0;
+        }
+        return myLinkedList.value;
+    }
+
+    private MyLinkedList getElement(int index) {
         MyLinkedList myLinkedList = this;
         for (int i = 0; i <= index; i++) {
             if (myLinkedList.next == null) {
-                System.out.println("Wrong index");
-                return 0;
+                return null;
             }
             myLinkedList = myLinkedList.next;
         }
-        return myLinkedList.value;
+        return myLinkedList;
     }
 
     @Override
@@ -58,8 +66,16 @@ public class MyLinkedList implements MyListInterface {
 
     @Override
     public void delete(int index) {
+        if (index < getSize()) {
+            MyLinkedList previousElement = getElement(index - 1);
+            MyLinkedList removableElement = getElement(index);
+            previousElement.next = removableElement.next;
+            removableElement.next = null;
+        }
+
 
     }
+
 
     @Override
     public MyListInterface clone() {
@@ -68,6 +84,25 @@ public class MyLinkedList implements MyListInterface {
 
     @Override
     public int getSize() {
-        return 0;
+        int counter = 0;
+        MyLinkedList myLinkedList = this;
+        while (myLinkedList.next != null) {
+            counter++;
+            myLinkedList = myLinkedList.next;
+        }
+        return counter;
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[");
+        for (int i = 0; i < this.getSize(); i++) {
+            stringBuilder.append(get(i));
+            if (i != getSize() - 1) {
+                stringBuilder.append(", ");
+            }
+        }
+        stringBuilder.append("]");
+        return stringBuilder.toString();
     }
 }

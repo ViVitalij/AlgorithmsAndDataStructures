@@ -9,8 +9,14 @@ import algorithms.structures.MyListInterface;
 public class MyLinkedListTest {
     public static void main(String[] args) {
         MyListInterface myListInterface = new MyLinkedList();
-        myListInterface.get(0);
+//        myListInterface.get(0);
         myListInterface.add(5);
-        System.out.println(myListInterface.get(0));
+        myListInterface.add(4);
+        myListInterface.add(2);
+        myListInterface.add(1);
+        myListInterface.add(0);
+        myListInterface.delete(3);
+        System.out.println(myListInterface.get(3));
+        System.out.println(myListInterface);
     }
 }
