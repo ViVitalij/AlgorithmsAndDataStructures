@@ -11,7 +11,8 @@ public class LIFOQueue extends AbstractQueue {
     protected LIFOQueue(int value) {
         super.value = value;
     }
-
+    
+    //needs improvement
     @Override
     public void push(int value) {
         LIFOQueue insertedElement = new LIFOQueue(value);
