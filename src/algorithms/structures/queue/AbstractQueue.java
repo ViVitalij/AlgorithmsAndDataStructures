@@ -11,7 +11,7 @@ public abstract class AbstractQueue implements Queue {
     public AbstractQueue() {
     }
 
-    public AbstractQueue(int value) {
+    protected AbstractQueue(int value) {
         this.value = value;
     }
 
@@ -29,16 +29,20 @@ public abstract class AbstractQueue implements Queue {
 
     @Override
     public Queue clone() {
-        AbstractQueue clonedQueue = new FIFOQueue();
+        AbstractQueue clonedQueue = getInstance();
         AbstractQueue returnQueue = clonedQueue;
-        AbstractQueue tmpQueue = this.next;
-        while (tmpQueue != null) {
-            clonedQueue.next = new FIFOQueue(tmpQueue.value);
-            tmpQueue = tmpQueue.next;
+        AbstractQueue thisQueue = this.next;
+        while (thisQueue != null) {
+            clonedQueue.next = getInstance(thisQueue.value);
+            thisQueue = thisQueue.next;
             clonedQueue = clonedQueue.next;
         }
         return returnQueue;
     }
+
+    protected abstract AbstractQueue getInstance();
+
+    protected abstract AbstractQueue getInstance(int value);
 
     protected AbstractQueue getLast() {
         AbstractQueue myAbstractQueue = this;

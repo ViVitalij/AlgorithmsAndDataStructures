@@ -9,7 +9,17 @@ public class FIFOQueue extends AbstractQueue {
     }
 
     protected FIFOQueue(int value) {
-        super.value = value;
+        super(value);
+    }
+
+    @Override
+    protected AbstractQueue getInstance() {
+        return new FIFOQueue();
+    }
+
+    @Override
+    protected AbstractQueue getInstance(int value) {
+        return new FIFOQueue(value);
     }
 
     @Override

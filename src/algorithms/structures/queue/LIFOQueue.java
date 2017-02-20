@@ -9,14 +9,24 @@ public class LIFOQueue extends AbstractQueue {
     }
 
     protected LIFOQueue(int value) {
-        super.value = value;
+        super(value);
     }
-    
-    //needs improvement
+
+    @Override
+    protected AbstractQueue getInstance() {
+        return new LIFOQueue();
+    }
+
+    @Override
+    protected AbstractQueue getInstance(int value) {
+        return new LIFOQueue(value);
+    }
+
     @Override
     public void push(int value) {
         LIFOQueue insertedElement = new LIFOQueue(value);
+        AbstractQueue nextValue = this.next;
         this.next = insertedElement;
-        insertedElement.next = new LIFOQueue(value);
+        insertedElement.next = nextValue;
     }
 }
