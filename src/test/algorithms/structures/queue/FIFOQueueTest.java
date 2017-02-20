@@ -13,14 +13,14 @@ public class FIFOQueueTest {
         fifoQueue.push(5);
         fifoQueue.push(7);
         fifoQueue.push(9);
-        fifoQueue.pop();
-        fifoQueue.pop();
-        fifoQueue.pop();
-        fifoQueue.pop();
-        fifoQueue.pop();
+//        fifoQueue.pop();
+//        fifoQueue.pop();
+//        fifoQueue.pop();
+//        fifoQueue.pop();
+//        fifoQueue.pop();
         System.out.println(fifoQueue);
         Queue clonedList = fifoQueue.clone();
-        clonedList.push(4);
+        clonedList.push(88);
         System.out.println("Cloned list: " + clonedList);
     }
 }
