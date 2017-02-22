@@ -25,7 +25,7 @@ public class LIFOQueueTest {
         lifoQueue.push(3);
 //        lifoQueue.push(7);
 //        lifoQueue.pop();
-        System.out.println(lifoQueue.pop());
+//        System.out.println(lifoQueue.pop());
 
         System.out.println(lifoQueue);
         Queue clonedList = lifoQueue.clone();

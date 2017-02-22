@@ -1,10 +1,13 @@
-package algorithms.sort;
-import static algorithms.sort.SortUtils.swap;
+package algorithms.sort.impl;
+
+import algorithms.sort.Sort;
+
+import static algorithms.sort.impl.SortUtils.swap;
 
 /**
  * Created by m.losK on 2017-02-14.
  */
-public class BubbleSort {
+public class BubbleSort implements Sort {
     public static void main(String[] args) {
         BubbleSort bubbleSort = new BubbleSort();
         int[] unsortedArray = {-2, -4, 1, 6, -1};
@@ -14,7 +17,8 @@ public class BubbleSort {
         printArray(sortedArray);
     }
 
-    public static int[] ascSort(int[] unsortedArray) {
+    @Override
+    public int[] ascSort(int[] unsortedArray) {
         boolean flag;
         for (int t = 0; t < unsortedArray.length - 1; t++) {
             flag = true;
@@ -31,7 +35,8 @@ public class BubbleSort {
         return unsortedArray;
     }
 
-    public static int[] descSort(int[] unsortedArray) {
+    @Override
+    public int[] descSort(int[] unsortedArray) {
         boolean flag;
         for (int t = 0; t < unsortedArray.length - 1; t++) {
             flag = true;

@@ -1,11 +1,13 @@
-package algorithms.sort;
+package algorithms.sort.impl;
+
+import algorithms.sort.Sort;
 
 import java.util.Arrays;
 
 /**
  * Created by m.losK on 2017-02-14.
  */
-public class SelectionSort {
+public class SelectionSort implements Sort {
     public static void main(String[] args) {
         SelectionSort selectionSort = new SelectionSort();
         int[] unsortedArray = {-2, -4, 1, 6, -1, 8, -2, -1};
@@ -24,7 +26,7 @@ public class SelectionSort {
         return unsortedArray;
     }
 
-    public static int[] ascSort(int[] unsortedArray) {
+    public int[] ascSort(int[] unsortedArray) {
         for (int i = 0; i < unsortedArray.length; i++) {
             int index = 0;
             for (int j = 1; j < unsortedArray.length - i; j++) {
@@ -36,7 +38,7 @@ public class SelectionSort {
         return unsortedArray;
     }
 
-    public static int[] ascSortUpgrade(int[] unsortedArray) {
+    public int[] ascSortUpgrade(int[] unsortedArray) {
 
         for (int i = 0; i < unsortedArray.length - 1; i++) {
             int minIndex = i;
