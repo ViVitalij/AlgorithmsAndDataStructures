@@ -1,3 +1,5 @@
 .idea/
 out/
-SDA-AlgorytmyIStrukturyDanych.iml
+target/
+SDA-AlgorithmsAndDataStructures.iml
+mavenSort.iml

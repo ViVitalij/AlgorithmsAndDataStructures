@@ -10,12 +10,14 @@ import algorithms.sort.impl.SelectionSort;
  */
 public class SortFactory {
     private static SortFactory instance = new SortFactory();
-    private SortFactory(){
+
+    private SortFactory() {
     }
 
-    public static SortFactory getInstance(){
+    public static SortFactory getInstance() {
         return instance;
     }
+
     public static Sort produce(Sort.sortEnum type) {
         if (Sort.sortEnum.BUBBLE.equals(type)) {
             return new BubbleSort();
